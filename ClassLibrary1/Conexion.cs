@@ -22,6 +22,7 @@ namespace Clases
                 conexion.ConnectionString = con;
                 conexion.Open();
 
+                //hola
                 //Console.WriteLine("SI");
                     
                 return conexion;
