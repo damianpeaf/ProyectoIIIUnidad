@@ -1,4 +1,5 @@
 ﻿using Clases;
+using Dominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -97,22 +98,14 @@ namespace Ingresar
         {
             try
             {
-                MySqlConnection cn = new Conexion().IniciarConexion();
-
-
-                
-                MySqlCommand comando = new MySqlCommand($"Delete From Post where idPost='{txtId.Text}' ", cn);
-                
-                if (comando.ExecuteNonQuery() >0)
-                {
-                    MessageBox.Show("Post Eliminado");
-                }
-               
+                DominioPost post = new DominioPost();
+                post.EliminarPost(txtId.Text);
+                MessageBox.Show("Registro eliminado");
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Registro no encontrado");
 
-                MessageBox.Show(ex + "");
             }
         }
 
@@ -136,33 +129,19 @@ namespace Ingresar
         {
             try
             {
+                DominioPost post = new DominioPost();
+                String[] datos = post.BuscarPost(txtId.Text);
 
-                MySqlConnection cn = new Conexion().IniciarConexion();
-
-                MySqlCommand comando = new MySqlCommand($"SELECT * FROM post WHERE idPost='{txtId.Text}' ", cn);
-                MySqlDataReader reader = comando.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        txtId.Text = reader.GetString(0);
-                        txtTitulo.Text = reader.GetString(1);
-                        txtHora.Text = "Hora de Publicacion: " + reader.GetString(2);
-                        txtContenido.Text = reader.GetString(3);
-                    }
-
-                    cn.Close();
-                    reader.Close();
-                }
-
-                ObtenerCategoria(txtId.Text);
-
+                txtId.Text = datos[0];
+                txtTitulo.Text = datos[1];
+                txtHora.Text = datos[2];
+                txtContenido.Text = datos[3];
+                ObtenerCategoria(datos[4]);
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Registro no encontrado");
 
-                MessageBox.Show(ex + "");
             }
         }
 

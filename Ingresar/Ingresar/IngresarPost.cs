@@ -1,4 +1,5 @@
 ﻿using Clases;
+using Dominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -111,18 +112,15 @@ namespace Ingresar
         {
             try
             {
+                DominioPost post = new DominioPost();
+                post.InsertarPost(txtTitulo.Text, txtContenido.Text, idCategoria);
 
-                MySqlCommand comando = new MySqlCommand($"INSERT INTO post (idPost,titulo,contenido,idCategoria,idEstado)  VALUES(null,'{txtTitulo.Text}' , '{txtContenido.Text}', {idCategoria}, 1)", cn);
-                if (comando.ExecuteNonQuery() >0)
-                {
-                    MessageBox.Show("Post insertado");
-                }
-               
+
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Registro no encontrado");
 
-                MessageBox.Show(ex + "");
             }
         }
 

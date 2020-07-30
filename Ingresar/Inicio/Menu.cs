@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
 using Clases;
+using Dominio;
 
 namespace Ingresar.Inicio
 {
@@ -69,66 +70,12 @@ namespace Ingresar.Inicio
             if (tabla != null)
             {
 
+                String id = txtId.Text.ToString();
 
+                DominioPost post = new DominioPost();
+                ds = post.mostrarPost(tabla, id);
 
-                try
-                {
-                    MySqlConnection cn = new Conexion().IniciarConexion();
-
-
-                    string comando;
-
-                    switch (tabla)
-                    {
-                        case 0:
-                            comando = "SELECT * FROM evento";
-
-                            break;
-
-                        case 1:
-                            comando = "SELECT * FROM post";
-                            break;
-
-                        default:
-                            comando = "SELECT * FROM evento";
-                            break;
-
-                    }
-
-                    string id = textBox1.Text.ToString();
-
-                    if (id == "")
-                    {
-                        comando = comando + "";
-                    }
-                    else
-                    {
-                        if (tabla == 0)
-                        {
-                            comando = comando + $" where idEvento = '{id}'";
-                        }
-                        else if (tabla == 1)
-                        {
-                            comando = comando + $" where idPost = '{id}'";
-
-                        }
-                    }
-
-
-                    MySqlCommand datos = new MySqlCommand(comando, cn);
-
-                    MySqlDataAdapter m_datos = new MySqlDataAdapter(datos);
-                    ds = new DataSet();
-                    m_datos.Fill(ds);
-
-                    dataGridView1.DataSource = ds.Tables[0];
-
-                }
-                catch (MySqlException ex)
-                {
-
-                    throw;
-                }
+                dataGridView1.DataSource = ds.Tables[0];
 
             }
         }

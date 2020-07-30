@@ -1,4 +1,5 @@
 ﻿using Clases;
+using Dominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -23,9 +24,9 @@ namespace Ingresar
 
             if (idCampo != string.Empty)
             {
-
                 txtId.Text = idCampo;
-                buscar();
+                Buscar();
+
             }
 
             comboBox1.Text = "Categoria";
@@ -118,25 +119,19 @@ namespace Ingresar
         //ACCION DEL BOTON INGRESAR
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
-                MySqlConnection cn = new Conexion().IniciarConexion();
-
-
-                
-                MySqlCommand comando = new MySqlCommand($"UPDATE post set titulo='{txtTitulo.Text}', contenido='{txtContenido.Text}', idCategoria={idCategoria} WHERE idPost='{txtId.Text}' ", cn);
-                
-                if (comando.ExecuteNonQuery() >0)
-                {
-                    MessageBox.Show("Post Actuzalizado");
-                }
-               
+                DominioPost post = new DominioPost();
+                post.ActualizarPost(txtId.Text, txtTitulo.Text, txtContenido.Text, idCategoria);
+                MessageBox.Show("actualizado Correctamente");
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Registro no actualizado");
 
-                MessageBox.Show(ex + "");
             }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,42 +154,31 @@ namespace Ingresar
             this.Hide();
         }
 
-        public void buscar()
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+
+        void Buscar()
         {
             try
             {
+                DominioPost post = new DominioPost();
+                String[] datos = post.BuscarPost(txtId.Text);
 
-                MySqlConnection cn = new Conexion().IniciarConexion();
-
-                MySqlCommand comando = new MySqlCommand($"SELECT * FROM post WHERE idPost='{txtId.Text}' ", cn);
-                MySqlDataReader reader = comando.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        txtId.Text = reader.GetString(0);
-                        txtTitulo.Text = reader.GetString(1);
-                        txtHora.Text = "Hora de Publicacion: " + reader.GetString(2);
-                        txtContenido.Text = reader.GetString(3);
-                    }
-
-                    cn.Close();
-                    reader.Close();
-                }
-
+                txtId.Text = datos[0];
+                txtTitulo.Text = datos[1];
+                txtHora.Text = datos[2];
+                txtContenido.Text = datos[3];
 
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Registro no encontrado");
 
-                MessageBox.Show(ex + "");
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            buscar();
         }
 
         private void txtId_Enter(object sender, EventArgs e)

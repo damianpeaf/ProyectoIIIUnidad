@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using Clases;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ namespace Clases
     {
 
 
-        MySqlConnection conexion = new MySqlConnection();
+        private MySqlConnection conexion = new MySqlConnection();
 
         public MySqlConnection IniciarConexion()
         {
@@ -21,9 +23,6 @@ namespace Clases
                 String con = "Server=127.0.0.1;Uid=root;pwd=;database=proyecto3unidad";
                 conexion.ConnectionString = con;
                 conexion.Open();
-
-                //hola
-                //Console.WriteLine("SI");
                     
                 return conexion;
             }
@@ -34,5 +33,15 @@ namespace Clases
             }
         }
 
+        public MySqlConnection CerrarConexion()
+        {
+            if (conexion.State == ConnectionState.Closed)
+                conexion.Close();
+            return conexion;
+        }
+
     }
+
+
+
 }
