@@ -1,5 +1,4 @@
-﻿using Clases;
-using Dominio;
+﻿using Dominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -22,12 +21,7 @@ namespace Ingresar
         {
             InitializeComponent();
 
-            //if (idCampo != string.Empty)
-            //{
-
-            //    txtId.Text = idCampo;
                 buscar();
-            //}
 
 
         }
@@ -40,26 +34,14 @@ namespace Ingresar
         {
             try
             {
-                MySqlConnection cn = new Conexion().IniciarConexion();
+                DominioCategoria categoria = new DominioCategoria();
 
-
-                MySqlCommand comando = new MySqlCommand($"SELECT nombre From Categoria where idCategoria='{id}'", cn);
-                MySqlDataReader reader =  comando.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    txtCategoria.Text = reader.GetString(0);
-                }
-
-                cn.Close();
-                reader.Close();
-
+                txtCat.Text = categoria.BuscarCategoria(id);
 
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("NI");
-                MessageBox.Show("error"+ ex);
+                MessageBox.Show("error" + ex);
             }
 
         }
@@ -132,8 +114,8 @@ namespace Ingresar
                 DominioEvento post = new DominioEvento();
                 String[] datos = post.Buscarevento(txtId.Text);
  
-                txtinicio.Text = datos[0];
-                txtId.Text = "Hora de Inicio: " + datos[1];
+                txtId.Text = datos[0];
+                txtinicio.Text = "Hora de Inicio: " + datos[1];
                 txtFinal.Text ="hora de finalizacion: " + datos[2];
                 txtFecha.Text = datos[3];
                 txtTit.Text ="Titulo: " + datos[4];

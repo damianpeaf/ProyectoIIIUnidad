@@ -1,5 +1,4 @@
-﻿using Clases;
-using Dominio;
+﻿using Dominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -21,6 +20,7 @@ namespace Ingresar
         public ActualizarEvento(String idCampo)
         {
             InitializeComponent();
+            ObtenerCategoria();
 
 
             txtInicio.Format = DateTimePickerFormat.Custom;
@@ -29,15 +29,14 @@ namespace Ingresar
             txtFinal.Format = DateTimePickerFormat.Custom;
             txtFinal.CustomFormat = "yyyy-MM-dd hh:mm:ss";
 
-            if (idCampo != string.Empty)
+            if (idCampo != null)
             {
                 txtId.Text = idCampo;
                 Buscar();
 
             }
 
-            comboBox1.Text = "Categoria";
-            ObtenerCategoria();
+
 
         }
 
@@ -49,26 +48,14 @@ namespace Ingresar
         {
             try
             {
-                MySqlConnection cn = new Conexion().IniciarConexion();
+                DominioCategoria categoria = new DominioCategoria();
 
-
-                MySqlCommand comando = new MySqlCommand("SELECT nombre, idCategoria From Categoria", cn);
-                MySqlDataReader reader =  comando.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    comboBox1.Items.Add(reader.GetString(0).ToString());
-                }
-
-                cn.Close();
-                reader.Close();
-
+                comboBox1.DataSource = categoria.ObtenerCategoria();
 
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("NI");
-                MessageBox.Show("error"+ ex);
+                MessageBox.Show("error" + ex);
             }
 
         }
@@ -124,11 +111,6 @@ namespace Ingresar
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            idCategoria = comboBox1.SelectedIndex+1;
-            //MessageBox.Show(idCategoria + "");
-        }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -165,6 +147,11 @@ namespace Ingresar
                 txtTitulo.Text = datos[4];
                 txtDescripcion.Text =  datos[5];
                 //ObtenerCategoria(datos[6]);
+
+                int indiceCombo = int.Parse(datos[6]);
+
+                comboBox1.SelectedIndex = indiceCombo -1;
+
             }
             catch (MySqlException ex)
             {
@@ -173,18 +160,33 @@ namespace Ingresar
             }
         }
 
-        private void txtId_Enter(object sender, EventArgs e)
+       
+
+        private void txtId_Enter_1(object sender, EventArgs e)
         {
-            
+            if (txtId.Text == "Id")
+            {
+                txtId.Text = "";
+                txtId.ForeColor = Color.White;
+            }
         }
 
         private void txtId_Leave(object sender, EventArgs e)
         {
             if (txtId.Text == "")
             {
-                txtId.Text = "id";
+                txtId.Text = "Id";
                 txtId.ForeColor = Color.White;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idCategoria = comboBox1.SelectedIndex + 1;
+
+            //MessageBox.Show(comboBox1.SelectedIndex + "");
+
+            //MessageBox.Show(idCategoria + "");
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)

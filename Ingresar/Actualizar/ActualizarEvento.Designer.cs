@@ -241,6 +241,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(337, 21);
             this.comboBox1.TabIndex = 24;
+            this.comboBox1.Text = "Categoria";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtDescripcion
             // 
@@ -316,6 +318,8 @@
             this.txtId.Size = new System.Drawing.Size(337, 27);
             this.txtId.TabIndex = 25;
             this.txtId.Text = "Id";
+            this.txtId.Enter += new System.EventHandler(this.txtId_Enter_1);
+            this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
             // 
             // ActualizarEvento
             // 

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DominioCategoria.cs" />
     <Compile Include="DominioEvento.cs" />
     <Compile Include="DominioPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

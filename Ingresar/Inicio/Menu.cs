@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
-using Clases;
 using Dominio;
 
 namespace Ingresar.Inicio

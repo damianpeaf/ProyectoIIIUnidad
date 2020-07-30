@@ -1,5 +1,4 @@
-﻿using Clases;
-using Dominio;
+﻿using Dominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,15 +15,12 @@ namespace Ingresar
     public partial class IngresarPost : Form
     {
 
-        MySqlConnection cn = new Conexion().IniciarConexion();
         
 
 
         public IngresarPost()
         {
             InitializeComponent();
-
-            comboBox1.Text = "Categoria";
             ObtenerCategoria();
 
         }
@@ -37,21 +33,13 @@ namespace Ingresar
         {
             try
             {
-                MySqlCommand comando = new MySqlCommand("SELECT nombre, idCategoria From Categoria order by idCategoria asc", cn);
-                MySqlDataReader reader =  comando.ExecuteReader();
+                DominioCategoria categoria = new DominioCategoria();
 
-                while (reader.Read())
-                {
-                    comboBox1.Items.Add(reader.GetString(0).ToString());
-                }
+                comboBox1.DataSource = categoria.ObtenerCategoria();
 
-                reader.Close();
-
-                
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("NI");
                 MessageBox.Show("error"+ ex);
             }
 
