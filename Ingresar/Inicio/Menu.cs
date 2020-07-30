@@ -117,7 +117,18 @@ namespace Ingresar.Inicio
                     form.Show();
 
                     
-                }        
+                }else if (tablaNombre == "idEvento")
+                {
+
+                    ActualizarEvento form = new ActualizarEvento(id);
+                    this.Hide();
+                    form.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("tabla no seleccionada");
+                }
 
             }
         }
@@ -127,6 +138,25 @@ namespace Ingresar.Inicio
             EliminarPost form = new EliminarPost();
             form.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EliminarEvento form = new EliminarEvento();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ActualizarEvento form = new ActualizarEvento(null);
+            form.Show();
+            this.Hide();
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Menu_MouseMove(object sender, MouseEventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Ingresar
 {
-    partial class ActualizarPost
+    partial class EliminarEvento
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,18 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActualizarPost));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarEvento));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtContenido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Borrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,8 +45,17 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtTitulo = new System.Windows.Forms.Label();
+            this.txtContenido = new System.Windows.Forms.Label();
+            this.txtCategoria = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtFinal = new System.Windows.Forms.Label();
+            this.txtinicio = new System.Windows.Forms.Label();
+            this.txtTit = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.Label();
+            this.txtCat = new System.Windows.Forms.Label();
+            this.txtFecha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -72,7 +78,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox5);
@@ -122,32 +128,6 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // txtTitulo
-            // 
-            this.txtTitulo.BackColor = System.Drawing.Color.Black;
-            this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.ForeColor = System.Drawing.Color.White;
-            this.txtTitulo.Location = new System.Drawing.Point(301, 127);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(337, 27);
-            this.txtTitulo.TabIndex = 1;
-            this.txtTitulo.Text = "Titulo";
-            this.txtTitulo.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.txtTitulo.Leave += new System.EventHandler(this.txtTitulo_Leave);
-            // 
-            // txtContenido
-            // 
-            this.txtContenido.BackColor = System.Drawing.Color.Black;
-            this.txtContenido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContenido.ForeColor = System.Drawing.Color.White;
-            this.txtContenido.Location = new System.Drawing.Point(301, 194);
-            this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(337, 27);
-            this.txtContenido.TabIndex = 2;
-            this.txtContenido.Text = "Contenido";
-            this.txtContenido.Enter += new System.EventHandler(this.txtContenido_Enter);
-            this.txtContenido.Leave += new System.EventHandler(this.txtContenido_Leave);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -157,44 +137,33 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
-            // button1
+            // Borrar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.button1.Location = new System.Drawing.Point(301, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(337, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.Black;
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(301, 227);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(337, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Borrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.Borrar.FlatAppearance.BorderSize = 0;
+            this.Borrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Borrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Borrar.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.Borrar.Location = new System.Drawing.Point(302, 339);
+            this.Borrar.Name = "Borrar";
+            this.Borrar.Size = new System.Drawing.Size(337, 41);
+            this.Borrar.TabIndex = 4;
+            this.Borrar.Text = "Eliminar";
+            this.Borrar.UseVisualStyleBackColor = false;
+            this.Borrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(346, 53);
+            this.label2.Location = new System.Drawing.Point(388, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 24);
+            this.label2.Size = new System.Drawing.Size(165, 24);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Actualizar Noticia";
+            this.label2.Text = "Eliminar Evento";
             // 
             // pictureBox1
             // 
@@ -241,25 +210,12 @@
             this.txtId.BackColor = System.Drawing.Color.Black;
             this.txtId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(301, 94);
+            this.txtId.Location = new System.Drawing.Point(328, 94);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(337, 27);
+            this.txtId.Size = new System.Drawing.Size(310, 27);
             this.txtId.TabIndex = 11;
-            this.txtId.Text = "id";
             this.txtId.Enter += new System.EventHandler(this.txtId_Enter);
             this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
-            // 
-            // txtHora
-            // 
-            this.txtHora.AutoSize = true;
-            this.txtHora.BackColor = System.Drawing.Color.Black;
-            this.txtHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtHora.Location = new System.Drawing.Point(297, 160);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(174, 21);
-            this.txtHora.TabIndex = 12;
-            this.txtHora.Text = "Hora de Publicacion: ";
             // 
             // button2
             // 
@@ -270,7 +226,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.button2.Location = new System.Drawing.Point(301, 349);
+            this.button2.Location = new System.Drawing.Point(302, 386);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(337, 41);
             this.button2.TabIndex = 13;
@@ -278,31 +234,148 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // ActualizarPost
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BackColor = System.Drawing.Color.Black;
+            this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtTitulo.Location = new System.Drawing.Point(358, 126);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(0, 21);
+            this.txtTitulo.TabIndex = 15;
+            // 
+            // txtContenido
+            // 
+            this.txtContenido.AutoSize = true;
+            this.txtContenido.BackColor = System.Drawing.Color.Black;
+            this.txtContenido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContenido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtContenido.Location = new System.Drawing.Point(397, 168);
+            this.txtContenido.Name = "txtContenido";
+            this.txtContenido.Size = new System.Drawing.Size(0, 21);
+            this.txtContenido.TabIndex = 17;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.AutoSize = true;
+            this.txtCategoria.BackColor = System.Drawing.Color.Black;
+            this.txtCategoria.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtCategoria.Location = new System.Drawing.Point(396, 279);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(0, 21);
+            this.txtCategoria.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(298, 97);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 21);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "id";
+            // 
+            // txtFinal
+            // 
+            this.txtFinal.AutoSize = true;
+            this.txtFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinal.ForeColor = System.Drawing.Color.White;
+            this.txtFinal.Location = new System.Drawing.Point(298, 160);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(168, 19);
+            this.txtFinal.TabIndex = 22;
+            this.txtFinal.Text = "Hora de Finalizacion";
+            // 
+            // txtinicio
+            // 
+            this.txtinicio.AutoSize = true;
+            this.txtinicio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtinicio.ForeColor = System.Drawing.Color.White;
+            this.txtinicio.Location = new System.Drawing.Point(298, 133);
+            this.txtinicio.Name = "txtinicio";
+            this.txtinicio.Size = new System.Drawing.Size(117, 19);
+            this.txtinicio.TabIndex = 21;
+            this.txtinicio.Text = "Hora de Inicio";
+            // 
+            // txtTit
+            // 
+            this.txtTit.AutoSize = true;
+            this.txtTit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTit.ForeColor = System.Drawing.Color.White;
+            this.txtTit.Location = new System.Drawing.Point(298, 218);
+            this.txtTit.Name = "txtTit";
+            this.txtTit.Size = new System.Drawing.Size(50, 19);
+            this.txtTit.TabIndex = 26;
+            this.txtTit.Text = "Titulo";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.AutoSize = true;
+            this.txtDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcion.Location = new System.Drawing.Point(298, 247);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(101, 19);
+            this.txtDescripcion.TabIndex = 27;
+            this.txtDescripcion.Text = "Descripcion";
+            // 
+            // txtCat
+            // 
+            this.txtCat.AutoSize = true;
+            this.txtCat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCat.ForeColor = System.Drawing.Color.White;
+            this.txtCat.Location = new System.Drawing.Point(298, 279);
+            this.txtCat.Name = "txtCat";
+            this.txtCat.Size = new System.Drawing.Size(92, 19);
+            this.txtCat.TabIndex = 28;
+            this.txtCat.Text = "Categoria";
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.AutoSize = true;
+            this.txtFecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.ForeColor = System.Drawing.Color.White;
+            this.txtFecha.Location = new System.Drawing.Point(299, 189);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(167, 19);
+            this.txtFecha.TabIndex = 29;
+            this.txtFecha.Text = "Hora de Publicacion";
+            // 
+            // EliminarEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtFecha);
+            this.Controls.Add(this.txtCat);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtTit);
+            this.Controls.Add(this.txtFinal);
+            this.Controls.Add(this.txtinicio);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.txtContenido);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtHora);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Borrar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtContenido);
-            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ActualizarPost";
+            this.Name = "EliminarEvento";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "    ";
+            this.Load += new System.EventHandler(this.EliminarEvento_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -320,11 +393,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtContenido;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Borrar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -337,8 +407,17 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label txtHora;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label txtTitulo;
+        private System.Windows.Forms.Label txtContenido;
+        private System.Windows.Forms.Label txtCategoria;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtFinal;
+        private System.Windows.Forms.Label txtinicio;
+        private System.Windows.Forms.Label txtTit;
+        private System.Windows.Forms.Label txtDescripcion;
+        private System.Windows.Forms.Label txtCat;
+        private System.Windows.Forms.Label txtFecha;
     }
 }
 

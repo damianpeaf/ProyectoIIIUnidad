@@ -1,6 +1,6 @@
 ﻿namespace Ingresar
 {
-    partial class IngresarPost
+    partial class ActualizarEvento
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,24 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresarPost));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActualizarEvento));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtContenido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtHora = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFinal = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtInicio = new System.Windows.Forms.DateTimePicker();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,7 +76,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox5);
@@ -119,32 +126,6 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // txtTitulo
-            // 
-            this.txtTitulo.BackColor = System.Drawing.Color.Black;
-            this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.ForeColor = System.Drawing.Color.White;
-            this.txtTitulo.Location = new System.Drawing.Point(301, 97);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(337, 27);
-            this.txtTitulo.TabIndex = 1;
-            this.txtTitulo.Text = "Titulo";
-            this.txtTitulo.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.txtTitulo.Leave += new System.EventHandler(this.txtTitulo_Leave);
-            // 
-            // txtContenido
-            // 
-            this.txtContenido.BackColor = System.Drawing.Color.Black;
-            this.txtContenido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContenido.ForeColor = System.Drawing.Color.White;
-            this.txtContenido.Location = new System.Drawing.Point(301, 160);
-            this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(337, 27);
-            this.txtContenido.TabIndex = 2;
-            this.txtContenido.Text = "Contenido";
-            this.txtContenido.Enter += new System.EventHandler(this.txtContenido_Enter);
-            this.txtContenido.Leave += new System.EventHandler(this.txtContenido_Leave);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -163,24 +144,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.button1.Location = new System.Drawing.Point(301, 302);
+            this.button1.Location = new System.Drawing.Point(301, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(337, 41);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Ingresar";
+            this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.Black;
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(301, 221);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(337, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -189,9 +159,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(346, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 24);
+            this.label2.Size = new System.Drawing.Size(192, 24);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Ingreso de Noticia";
+            this.label2.Text = "Actualizar Evento";
             // 
             // pictureBox1
             // 
@@ -233,24 +203,145 @@
             this.linkLabel1.Size = new System.Drawing.Size(0, 13);
             this.linkLabel1.TabIndex = 0;
             // 
-            // IngresarPost
+            // txtHora
+            // 
+            this.txtHora.AutoSize = true;
+            this.txtHora.BackColor = System.Drawing.Color.Black;
+            this.txtHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtHora.Location = new System.Drawing.Point(297, 129);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(174, 21);
+            this.txtHora.TabIndex = 12;
+            this.txtHora.Text = "Hora de Publicacion: ";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.button2.Location = new System.Drawing.Point(301, 386);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(337, 41);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.Black;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(301, 312);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(337, 21);
+            this.comboBox1.TabIndex = 24;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.Black;
+            this.txtDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcion.Location = new System.Drawing.Point(301, 274);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(337, 27);
+            this.txtDescripcion.TabIndex = 23;
+            this.txtDescripcion.Text = "Descripcion";
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.BackColor = System.Drawing.Color.Black;
+            this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.Color.White;
+            this.txtTitulo.Location = new System.Drawing.Point(301, 232);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(337, 27);
+            this.txtTitulo.TabIndex = 22;
+            this.txtTitulo.Text = "Titulo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(297, 195);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 19);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Hora de Finalizacion";
+            // 
+            // txtFinal
+            // 
+            this.txtFinal.CalendarFont = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinal.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtFinal.CustomFormat = "yyyy-MM-dd";
+            this.txtFinal.Location = new System.Drawing.Point(472, 195);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(200, 20);
+            this.txtFinal.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(297, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 19);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Hora de Inicio";
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.CalendarFont = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInicio.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtInicio.CustomFormat = "yyyy-MM-dd";
+            this.txtInicio.Location = new System.Drawing.Point(472, 160);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(200, 20);
+            this.txtInicio.TabIndex = 18;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.Black;
+            this.txtId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.ForeColor = System.Drawing.Color.White;
+            this.txtId.Location = new System.Drawing.Point(301, 99);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(337, 27);
+            this.txtId.TabIndex = 25;
+            this.txtId.Text = "Id";
+            // 
+            // ActualizarEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtTitulo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtFinal);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtInicio);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtHora);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtContenido);
-            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "IngresarPost";
+            this.Name = "ActualizarEvento";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "    ";
@@ -271,11 +362,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtContenido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -287,6 +375,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label txtHora;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker txtFinal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker txtInicio;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 

@@ -47,11 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actualizar\ActualizarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarEvento.Designer.cs">
+      <DependentUpon>ActualizarEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Actualizar\ActualizarPost.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Actualizar\ActualizarPost.Designer.cs">
       <DependentUpon>ActualizarPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\EliminarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\EliminarEvento.Designer.cs">
+      <DependentUpon>EliminarEvento.cs</DependentUpon>
     </Compile>
     <Compile Include="Eliminar\EliminarPost.cs">
       <SubType>Form</SubType>
@@ -85,8 +97,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Actualizar\ActualizarEvento.resx">
+      <DependentUpon>ActualizarEvento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Actualizar\ActualizarPost.resx">
       <DependentUpon>ActualizarPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\EliminarEvento.resx">
+      <DependentUpon>EliminarEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar\EliminarPost.resx">
       <DependentUpon>EliminarPost.cs</DependentUpon>

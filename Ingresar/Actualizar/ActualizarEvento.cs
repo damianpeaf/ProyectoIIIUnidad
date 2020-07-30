@@ -13,19 +13,15 @@ using System.Windows.Forms;
 
 namespace Ingresar
 {
-    public partial class IngresarEvento : Form
+    public partial class ActualizarEvento : Form
     {
 
-        MySqlConnection cn = new Conexion().IniciarConexion();
-        
 
 
-        public IngresarEvento()
+        public ActualizarEvento(String idCampo)
         {
             InitializeComponent();
 
-            comboBox1.Text = "Categoria";
-            ObtenerCategoria();
 
             txtInicio.Format = DateTimePickerFormat.Custom;
             txtInicio.CustomFormat = "yyyy-MM-dd hh:mm:ss";
@@ -33,6 +29,15 @@ namespace Ingresar
             txtFinal.Format = DateTimePickerFormat.Custom;
             txtFinal.CustomFormat = "yyyy-MM-dd hh:mm:ss";
 
+            if (idCampo != string.Empty)
+            {
+                txtId.Text = idCampo;
+                Buscar();
+
+            }
+
+            comboBox1.Text = "Categoria";
+            ObtenerCategoria();
 
         }
 
@@ -44,7 +49,10 @@ namespace Ingresar
         {
             try
             {
-                MySqlCommand comando = new MySqlCommand("SELECT nombre, idCategoria From Categoria ", cn);
+                MySqlConnection cn = new Conexion().IniciarConexion();
+
+
+                MySqlCommand comando = new MySqlCommand("SELECT nombre, idCategoria From Categoria", cn);
                 MySqlDataReader reader =  comando.ExecuteReader();
 
                 while (reader.Read())
@@ -52,9 +60,10 @@ namespace Ingresar
                     comboBox1.Items.Add(reader.GetString(0).ToString());
                 }
 
+                cn.Close();
                 reader.Close();
 
-                
+
             }
             catch (MySqlException ex)
             {
@@ -64,9 +73,26 @@ namespace Ingresar
 
         }
 
-        //----------------------------------------------------------------------------------------------
 
         public int xClick = 0, yClick = 0;
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (txtTitulo.Text == "Titulo")
+            {
+                txtTitulo.Text = "";
+                txtTitulo.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txtTitulo_Leave(object sender, EventArgs e)
+        {
+            if (txtTitulo.Text == "")
+            {
+                txtTitulo.Text = "Titulo";
+                txtTitulo.ForeColor = Color.White;
+            }
+        }
 
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -83,25 +109,25 @@ namespace Ingresar
         //ACCION DEL BOTON INGRESAR
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
                 DominioEvento post = new DominioEvento();
-                post.InsertarEvento(txtInicio.Text, txtFinal.Text, txtTitulo.Text, txtDescripcion.Text, idCategoria);
-                MessageBox.Show("Registro insertado");
-
+                post.ActualizarEvento(txtId.Text, txtInicio.Text, txtFinal.Text, txtTitulo.Text, txtDescripcion.Text, idCategoria);
+                MessageBox.Show("actualizado Correctamente");
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Registro no insertado");
+                MessageBox.Show("Registro no actualizado");
 
             }
+
         }
-
-
-        //-----------------------------------------------------
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            idCategoria = comboBox1.SelectedIndex+1;
+            //MessageBox.Show(idCategoria + "");
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -118,47 +144,47 @@ namespace Ingresar
             this.Hide();
         }
 
-        private void txtContenido_Enter_1(object sender, EventArgs e)
-        {
-            if (txtDescripcion.Text == "Descripcion")
-            {
-                txtDescripcion.Text = "";
-                txtDescripcion.ForeColor = Color.LightGray;
-            }
-        }
 
-        private void txtTitulo_Enter(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            if (txtTitulo.Text == "Titulo")
-            {
-                txtTitulo.Text = "";
-                txtTitulo.ForeColor = Color.LightGray;
-            }
-        }
-
-        private void txtTitulo_Leave_1(object sender, EventArgs e)
-        {
-            if (txtTitulo.Text == "")
-            {
-                txtTitulo.Text = "Titulo";
-                txtTitulo.ForeColor = Color.White;
-            }
-        }
-
-        private void txtContenido_Leave(object sender, EventArgs e)
-        {
-            if (txtDescripcion.Text == "")
-            {
-                txtDescripcion.Text = "Descripcion";
-                txtDescripcion.ForeColor = Color.White;
-            }
+            Buscar();
         }
 
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        void Buscar()
         {
-            idCategoria = comboBox1.SelectedIndex + 1;
+            try
+            {
+                DominioEvento post = new DominioEvento();
+                String[] datos = post.Buscarevento(txtId.Text);
 
+                txtId.Text = datos[0];
+                txtInicio.Text =  datos[1];
+                txtFinal.Text =  datos[2];
+                txtHora.Text = datos[3];
+                txtTitulo.Text = datos[4];
+                txtDescripcion.Text =  datos[5];
+                //ObtenerCategoria(datos[6]);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Registro no encontrado");
+
+            }
+        }
+
+        private void txtId_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtId_Leave(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                txtId.Text = "id";
+                txtId.ForeColor = Color.White;
+            }
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -170,7 +196,7 @@ namespace Ingresar
         }
     }
 
-
+    
     
 
 }
