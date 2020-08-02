@@ -12,7 +12,6 @@ namespace Clases
     public class Conexion
     {
 
-
         private MySqlConnection conexion = new MySqlConnection();
 
         public MySqlConnection IniciarConexion()
@@ -41,7 +40,5 @@ namespace Clases
         }
 
     }
-
-
 
 }

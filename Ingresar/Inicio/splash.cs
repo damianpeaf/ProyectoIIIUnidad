@@ -24,7 +24,7 @@ namespace Ingresar.Inicio
             if (progressBar1.Value == 100)
             {
                 timer1.Stop();
-                Menu frm = new Menu();
+                InicioSesion.InicioSesion frm = new InicioSesion.InicioSesion();
                 this.Hide();
                 frm.Show();
             }

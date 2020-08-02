@@ -83,6 +83,18 @@
     <Compile Include="Ingresar\IngresarPost.Designer.cs">
       <DependentUpon>IngresarPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inicio\InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\App.Designer.cs">
+      <DependentUpon>App.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +107,20 @@
     <Compile Include="Inicio\splash.Designer.cs">
       <DependentUpon>splash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Varios\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Varios\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Varios\UserControl2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Varios\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Actualizar\ActualizarEvento.resx">
       <DependentUpon>ActualizarEvento.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +139,12 @@
     <EmbeddedResource Include="Ingresar\IngresarPost.resx">
       <DependentUpon>IngresarPost.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\App.resx">
+      <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +161,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Varios\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

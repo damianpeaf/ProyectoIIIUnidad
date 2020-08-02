@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
 using Dominio;
-
+using Ingresar.Inicio;
 namespace Ingresar.Inicio
 {
     public partial class Menu : Form
@@ -37,7 +37,7 @@ namespace Ingresar.Inicio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Ingresar.IngresarEvento form = new Ingresar.IngresarEvento();
+            IngresarEvento form = new IngresarEvento();
             form.Show();
             this.Hide();
 
@@ -45,7 +45,7 @@ namespace Ingresar.Inicio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Ingresar.IngresarPost form = new Ingresar.IngresarPost();
+            IngresarPost form = new IngresarPost();
             form.Show();
             this.Hide();
         }
@@ -155,7 +155,21 @@ namespace Ingresar.Inicio
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+            InicioSesion.InicioSesion frm = new InicioSesion.InicioSesion();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            InicioSesion.InicioSesion frm = new InicioSesion.InicioSesion();
+            this.Hide();
+            frm.Show();
         }
 
         private void Menu_MouseMove(object sender, MouseEventArgs e)
