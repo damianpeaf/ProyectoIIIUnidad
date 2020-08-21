@@ -57,6 +57,7 @@ namespace InicioSesion
                         Ingresar.Inicio.Menu frm = new Ingresar.Inicio.Menu();
                         this.Hide();
                         frm.Show();
+                        //sincronizar
                     }
                     else
                     {
