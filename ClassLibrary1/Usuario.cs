@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Comun;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,15 @@ namespace Clases
 
                         while (reader.Read())
                         {
-                            datosUsuario[0] = reader.GetString(0);
-                            datosUsuario[1] = reader.GetString(1);
-                            datosUsuario[2] = reader.GetString(2);
-                            datosUsuario[3] = reader.GetString(5);
+                            info_usuario.idUsuario =  datosUsuario[0] = reader.GetString(0);
+                            info_usuario.nombre = datosUsuario[1] = reader.GetString(1);
+                            info_usuario.apellido = datosUsuario[2] = reader.GetString(2);
+                            info_usuario.idTipoUsuario =datosUsuario[3] = reader.GetString(5);
 
                         }
 
                         reader.Close();
+
 
                         return datosUsuario;
 

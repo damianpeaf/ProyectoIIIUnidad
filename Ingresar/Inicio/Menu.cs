@@ -11,6 +11,8 @@ using System.Threading;
 using MySql.Data.MySqlClient;
 using Dominio;
 using Ingresar.Inicio;
+using Comun;
+
 namespace Ingresar.Inicio
 {
     public partial class Menu : Form
@@ -170,6 +172,39 @@ namespace Ingresar.Inicio
             InicioSesion.InicioSesion frm = new InicioSesion.InicioSesion();
             this.Hide();
             frm.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            if (info_usuario.idTipoUsuario == "1")
+            {
+                //
+            }else if (info_usuario.idTipoUsuario == "2")
+            {
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+
+            }
+            else if (info_usuario.idTipoUsuario == "3")
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+            }
+            else if (info_usuario.idTipoUsuario == "4")
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
         }
 
         private void Menu_MouseMove(object sender, MouseEventArgs e)

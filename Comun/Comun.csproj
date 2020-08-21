@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{207588E9-144E-47CF-A8A1-535AB0395D85}</ProjectGuid>
+    <ProjectGuid>{E7CB4B70-64C5-4537-BB8C-0D37EE93FE6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dominio</RootNamespace>
-    <AssemblyName>Dominio</AssemblyName>
+    <RootNamespace>Comun</RootNamespace>
+    <AssemblyName>Comun</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,21 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DominioCategoria.cs" />
-    <Compile Include="DominioEvento.cs" />
-    <Compile Include="DominioPost.cs" />
-    <Compile Include="DominioUsuario.cs" />
+    <Compile Include="info_usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Datos.csproj">
-      <Project>{bf585867-5ea4-4045-8a13-f7fff2a8b5ac}</Project>
-      <Name>Datos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Comun\Comun.csproj">
-      <Project>{e7cb4b70-64c5-4537-bb8c-0d37ee93fe6d}</Project>
-      <Name>Comun</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

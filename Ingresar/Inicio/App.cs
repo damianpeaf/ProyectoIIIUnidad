@@ -50,6 +50,20 @@ namespace Ingresar.Inicio
 
         public int xClick = 0, yClick = 0;
 
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            InicioSesion.InicioSesion frm = new InicioSesion.InicioSesion();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            InicioSesion.InicioSesion frm = new InicioSesion.InicioSesion();
+            this.Hide();
+            frm.Show();
+        }
+
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)

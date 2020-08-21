@@ -34,10 +34,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.userControl21 = new Ingresar.Varios.UserControl2();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.userControl21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +82,8 @@
             // 
             this.userControl21.ColorBottom = System.Drawing.Color.Turquoise;
             this.userControl21.ColorTop = System.Drawing.Color.SpringGreen;
+            this.userControl21.Controls.Add(this.label7);
+            this.userControl21.Controls.Add(this.pictureBox6);
             this.userControl21.Controls.Add(this.monthCalendar1);
             this.userControl21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControl21.Location = new System.Drawing.Point(0, 26);
@@ -91,6 +96,30 @@
             this.monthCalendar1.Location = new System.Drawing.Point(45, 111);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Unispace", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(111, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 14);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Regresar";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(30, 16);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(75, 29);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // App
             // 
@@ -110,6 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.userControl21.ResumeLayout(false);
+            this.userControl21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,5 +152,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Varios.UserControl2 userControl21;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
