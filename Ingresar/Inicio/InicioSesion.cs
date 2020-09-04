@@ -1,5 +1,6 @@
 ﻿using Dominio;
 using MySql.Data.MySqlClient;
+using RecuperarContraseña;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,6 +117,13 @@ namespace InicioSesion
                 txtContraseña.Text = "Contraseña";
                 txtContraseña.ForeColor = Color.LightGray;
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            RecuperarContraseña.RecuperarContraseña frm = new RecuperarContraseña.RecuperarContraseña();
+            this.Hide();
+            frm.Show();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)

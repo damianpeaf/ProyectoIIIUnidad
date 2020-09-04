@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="CorreoServicio\configuracionCorreo.cs" />
+    <Compile Include="CorreoServicio\Correo.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Post.cs" />

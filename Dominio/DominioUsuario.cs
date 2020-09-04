@@ -17,5 +17,10 @@ namespace Dominio
         {
             return usuario.validarUsuario(user, pass);
         }
+
+        public string recuperarContraseña(string correo)
+        {
+            return usuario.recuperarContraseña(correo);
+        }
     }
 }
