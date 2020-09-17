@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using Dominio;
 using Ingresar.Inicio;
 using Comun;
+using Reporte;
 
 namespace Ingresar.Inicio
 {
@@ -205,6 +206,13 @@ namespace Ingresar.Inicio
             {
                 MessageBox.Show("error");
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ReportePost frm = new ReportePost();
+            this.Hide();
+            frm.Show();
         }
 
         private void Menu_MouseMove(object sender, MouseEventArgs e)

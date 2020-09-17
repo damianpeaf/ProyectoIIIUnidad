@@ -19,7 +19,7 @@ namespace Ingresar.Inicio
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(2);
+            progressBar1.Increment(4);
 
             if (progressBar1.Value == 100)
             {

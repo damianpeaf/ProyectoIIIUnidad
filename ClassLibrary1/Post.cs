@@ -192,5 +192,44 @@ namespace Clases
                 cn.Close();
             }
         }
+
+
+        ///informe
+        ///
+
+
+        public DataTable Informe()
+        {
+
+            try
+            {
+                using (cn = new Conexion().IniciarConexion())
+                {
+                    string query = "SELECT P.idPost, P.titulo, P.fechaDePublicacion, P.contenido, C.nombre as 'Categoria', E.nombre as 'Estado' FROM  post P INNER JOIN categoria C on P.idCategoria=C.idCategoria inner join estado E on P.idEstado = E.idEstado";
+
+                    MySqlCommand comando = new MySqlCommand(query, cn);
+
+                    MySqlDataAdapter datos = new MySqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    datos.Fill(dt);
+
+                    return dt;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("" + ex);
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+        }
+
+
     }
 }

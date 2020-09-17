@@ -42,6 +42,10 @@ namespace Dominio
             post.Eliminar(id);
         }
 
+        public DataTable ReportePost()
+        {
+            return post.Informe();
+        }
 
     }
 }

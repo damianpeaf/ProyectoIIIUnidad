@@ -22,5 +22,7 @@ namespace Dominio
         {
             return usuario.recuperarContraseña(correo);
         }
+
+        public void crearUsuario(string nombre, string correo, string usuario, string contraseña, int tipo) { }
     }
 }

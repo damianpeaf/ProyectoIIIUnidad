@@ -96,5 +96,26 @@ namespace Clases
             }
         }
 
+        public void crearUsuario(string nombre, string correo, string usuario, string contraseña, int tipo)
+        {
+            try
+            {
+                using (cn = new Conexion().IniciarConexion())
+                {
+                    MySqlCommand comando = new MySqlCommand($"insert into usuario values(null, '{nombre}', '{correo}', '{usuario}', '{contraseña}', {tipo})", cn);
+                    comando.ExecuteNonQuery();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("" + ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }
