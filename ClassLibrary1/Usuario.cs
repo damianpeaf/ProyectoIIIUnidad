@@ -117,5 +117,38 @@ namespace Clases
             }
         }
 
+        public List<string> obtenerTipo()
+        {
+            try
+            {
+
+                using (cn = new Conexion().IniciarConexion())
+                {
+
+                    List<string> tipo = new List<string>();
+
+                    MySqlCommand comando = new MySqlCommand("SELECT nombre From tipoUsuario order by idTipoUsuario asc", cn);
+                    MySqlDataReader reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        tipo.Add(reader.GetString(0).ToString());
+                    }
+
+                    reader.Close();
+
+                    return tipo;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+                return null;
+                Console.WriteLine("NI");
+            }
+
+        }
+
     }
 }

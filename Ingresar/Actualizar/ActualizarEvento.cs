@@ -140,17 +140,25 @@ namespace Ingresar
                 DominioEvento post = new DominioEvento();
                 String[] datos = post.Buscarevento(txtId.Text);
 
-                txtId.Text = datos[0];
-                txtInicio.Text =  datos[1];
-                txtFinal.Text =  datos[2];
-                txtHora.Text = datos[3];
-                txtTitulo.Text = datos[4];
-                txtDescripcion.Text =  datos[5];
-                //ObtenerCategoria(datos[6]);
+                if (datos[0] != null)
+                {
+                    txtId.Text = datos[0];
+                    txtInicio.Text = datos[1];
+                    txtFinal.Text = datos[2];
+                    txtHora.Text = datos[3];
+                    txtTitulo.Text = datos[4];
+                    txtDescripcion.Text = datos[5];
+                    //ObtenerCategoria(datos[6]);
 
-                int indiceCombo = int.Parse(datos[6]);
+                    int indiceCombo = int.Parse(datos[6]);
 
-                comboBox1.SelectedIndex = indiceCombo -1;
+                    comboBox1.SelectedIndex = indiceCombo - 1;
+                }
+                else
+                {
+                    MessageBox.Show("Registro no encontrado");
+
+                }
 
             }
             catch (MySqlException ex)

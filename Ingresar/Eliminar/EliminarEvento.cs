@@ -113,14 +113,19 @@ namespace Ingresar
             {
                 DominioEvento post = new DominioEvento();
                 String[] datos = post.Buscarevento(txtId.Text);
- 
-                txtId.Text = datos[0];
-                txtinicio.Text = "Hora de Inicio: " + datos[1];
-                txtFinal.Text ="hora de finalizacion: " + datos[2];
-                txtFecha.Text = datos[3];
-                txtTit.Text ="Titulo: " + datos[4];
-                txtDescripcion.Text ="Descripcion: " + datos[5];
-                ObtenerCategoria(datos[6]);
+
+                if (datos[0] != null)
+                {
+
+
+                    txtId.Text = datos[0];
+                    txtinicio.Text = "Hora de Inicio: " + datos[1];
+                    txtFinal.Text = "hora de finalizacion: " + datos[2];
+                    txtFecha.Text = datos[3];
+                    txtTit.Text = "Titulo: " + datos[4];
+                    txtDescripcion.Text = "Descripcion: " + datos[5];
+                    ObtenerCategoria(datos[6]);
+                }
             }
             catch (MySqlException ex)
             {

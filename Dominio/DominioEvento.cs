@@ -21,9 +21,9 @@ namespace Dominio
             return Datos;
         }
 
-        public void InsertarEvento(string inicia, string termina, string titulo, string descripcion, int categoria)
+        public void InsertarEvento(string inicia, string termina, string titulo, string descripcion, int categoria, string idUsuario)
         {
-            evento.Insertar(inicia, termina, titulo, descripcion, categoria);
+            evento.Insertar(inicia, termina, titulo, descripcion, categoria, idUsuario);
         }
 
         public void ActualizarEvento(string id, string inicia, string termina, string titulo, string descripcion, int categoria)
@@ -41,6 +41,11 @@ namespace Dominio
         public void Eliminarevento(string id)
         {
             evento.Eliminar(id);
+        }
+
+        public DataTable RerpoteEvento()
+        {
+            return evento.Informe();
         }
 
     }

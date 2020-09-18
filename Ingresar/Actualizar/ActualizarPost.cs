@@ -155,14 +155,19 @@ namespace Ingresar
                 DominioPost post = new DominioPost();
                 String[] datos = post.BuscarPost(txtId.Text);
 
-                txtId.Text = datos[0];
-                txtTitulo.Text = datos[1];
-                txtHora.Text = datos[2];
-                txtContenido.Text = datos[3];
 
-                int indiceCombo = int.Parse(datos[4]);
+                if (datos[0] != null)
+                {
 
-                comboBox1.SelectedIndex = indiceCombo -1;
+                    txtId.Text = datos[0];
+                    txtTitulo.Text = datos[1];
+                    txtHora.Text = datos[2];
+                    txtContenido.Text = datos[3];
+
+                    int indiceCombo = int.Parse(datos[4]);
+
+                    comboBox1.SelectedIndex = indiceCombo - 1;
+                }
 
             }
             catch (MySqlException ex)
@@ -174,7 +179,11 @@ namespace Ingresar
 
         private void txtId_Enter(object sender, EventArgs e)
         {
-            
+            if (txtId.Text == "id")
+            {
+                txtId.Text = "";
+                txtId.ForeColor = Color.White;
+            }
         }
 
         private void txtId_Leave(object sender, EventArgs e)

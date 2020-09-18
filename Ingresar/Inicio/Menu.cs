@@ -179,13 +179,16 @@ namespace Ingresar.Inicio
         {
             if (info_usuario.idTipoUsuario == "1")
             {
-                //
+                
             }else if (info_usuario.idTipoUsuario == "2")
             {
                 button3.Enabled = false;
                 button4.Enabled = false;
                 button5.Enabled = false;
                 button6.Enabled = false;
+                button8.Enabled = false;
+                button9.Enabled = false;
+
 
             }
             else if (info_usuario.idTipoUsuario == "3")
@@ -194,6 +197,8 @@ namespace Ingresar.Inicio
                 button2.Enabled = false;
                 button5.Enabled = false;
                 button6.Enabled = false;
+                button8.Enabled = false;
+                button9.Enabled = false;
             }
             else if (info_usuario.idTipoUsuario == "4")
             {
@@ -201,6 +206,18 @@ namespace Ingresar.Inicio
                 button2.Enabled = false;
                 button3.Enabled = false;
                 button4.Enabled = false;
+                button8.Enabled = false;
+                button9.Enabled = false;
+            }
+            else if (info_usuario.idTipoUsuario == "5")
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+                button8.Enabled = false;
             }
             else
             {
@@ -215,9 +232,16 @@ namespace Ingresar.Inicio
             frm.Show();
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            IngresarUsuario frm = new IngresarUsuario();
+            this.Hide();
+            frm.Show();
+        }
+
         private void Menu_MouseMove(object sender, MouseEventArgs e)
         {
-            //
+            
         }
     }
 }

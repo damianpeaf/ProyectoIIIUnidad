@@ -12,7 +12,7 @@
   <xs:element name="DatosPost" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosPost" msprop:Generator_UserDSName="DatosPost">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Post" msprop:Generator_TableClassName="PostDataTable" msprop:Generator_TableVarName="tablePost" msprop:Generator_RowChangedName="PostRowChanged" msprop:Generator_TablePropName="Post" msprop:Generator_RowDeletingName="PostRowDeleting" msprop:Generator_RowChangingName="PostRowChanging" msprop:Generator_RowEvHandlerName="PostRowChangeEventHandler" msprop:Generator_RowDeletedName="PostRowDeleted" msprop:Generator_RowClassName="PostRow" msprop:Generator_UserTableName="Post" msprop:Generator_RowEvArgName="PostRowChangeEvent">
+        <xs:element name="Post" msprop:Generator_TableClassName="PostDataTable" msprop:Generator_TableVarName="tablePost" msprop:Generator_TablePropName="Post" msprop:Generator_RowDeletingName="PostRowDeleting" msprop:Generator_RowChangingName="PostRowChanging" msprop:Generator_RowEvHandlerName="PostRowChangeEventHandler" msprop:Generator_RowDeletedName="PostRowDeleted" msprop:Generator_UserTableName="Post" msprop:Generator_RowChangedName="PostRowChanged" msprop:Generator_RowEvArgName="PostRowChangeEvent" msprop:Generator_RowClassName="PostRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idPost" msprop:Generator_ColumnVarNameInTable="columnidPost" msprop:Generator_ColumnPropNameInRow="idPost" msprop:Generator_ColumnPropNameInTable="idPostColumn" msprop:Generator_UserColumnName="idPost" type="xs:string" minOccurs="0" />
@@ -21,6 +21,7 @@
               <xs:element name="contenido" msprop:Generator_ColumnVarNameInTable="columncontenido" msprop:Generator_ColumnPropNameInRow="contenido" msprop:Generator_ColumnPropNameInTable="contenidoColumn" msprop:Generator_UserColumnName="contenido" type="xs:string" minOccurs="0" />
               <xs:element name="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_UserColumnName="categoria" type="xs:string" minOccurs="0" />
               <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="Creador" msprop:Generator_ColumnVarNameInTable="columnCreador" msprop:Generator_ColumnPropNameInRow="Creador" msprop:Generator_ColumnPropNameInTable="CreadorColumn" msprop:Generator_UserColumnName="Creador" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

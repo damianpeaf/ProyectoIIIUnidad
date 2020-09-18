@@ -12,7 +12,6 @@ namespace Dominio
 
         Usuario usuario = new Usuario();
 
-
         public String[] validarUsuario(string user, string pass)
         {
             return usuario.validarUsuario(user, pass);
@@ -23,6 +22,17 @@ namespace Dominio
             return usuario.recuperarContraseña(correo);
         }
 
-        public void crearUsuario(string nombre, string correo, string usuario, string contraseña, int tipo) { }
+        public void crearUsuario(string nombre, string correo, string usuarioP, string contraseña, int tipo) 
+        {
+
+            usuario.crearUsuario(nombre, correo, usuarioP, contraseña, tipo);
+        
+        }
+
+        public List<String> tipoUsuario()
+        {
+            return usuario.obtenerTipo();
+        }
+
     }
 }

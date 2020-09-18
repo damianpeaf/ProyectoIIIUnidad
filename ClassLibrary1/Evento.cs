@@ -85,13 +85,13 @@ namespace Clases
 
         }
 
-        public void Insertar(string inicia, string termina, string titulo, string descripcion,int categoria)
+        public void Insertar(string inicia, string termina, string titulo, string descripcion,int categoria, string idUsuario)
         {
             try
             {
                 using (cn = new Conexion().IniciarConexion())
                 {
-                    MySqlCommand comando = new MySqlCommand($"INSERT INTO evento (idEvento,inicia,termina,titulo,descripcion,idCategoria, idEstado)  VALUES(null,'{inicia}' , '{termina}', '{titulo}', '{descripcion}', {categoria}, 1)", cn);
+                    MySqlCommand comando = new MySqlCommand($"INSERT INTO evento (idEvento,inicia,termina,titulo,descripcion,idCategoria, idEstado, idUsuario)  VALUES(null,'{inicia}' , '{termina}', '{titulo}', '{descripcion}', {categoria}, 1, {idUsuario})", cn);
                     comando.ExecuteNonQuery();
                 }
 
@@ -195,6 +195,39 @@ namespace Clases
                 cn.Close();
             }
         }
+
+        public DataTable Informe()
+        {
+
+            try
+            {
+                using (cn = new Conexion().IniciarConexion())
+                {
+                    string query = "SELECT E.idEvento, E.inicia, E.termina, E.fechaDePublicacion, E.titulo, E.descripcion, C.nombre as 'Categoria', Es.nombre as 'Estado', U.nombre as 'creador' FROM  evento E INNER JOIN categoria C on E.idCategoria=C.idCategoria inner join estado Es on E.idEstado = Es.idEstado inner join Usuario U on E.idUsuario = U.idUsuario";
+
+                    MySqlCommand comando = new MySqlCommand(query, cn);
+
+                    MySqlDataAdapter datos = new MySqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    datos.Fill(dt);
+
+                    return dt;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("" + ex);
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+        }
+
 
     }
 }

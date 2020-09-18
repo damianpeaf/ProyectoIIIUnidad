@@ -21,21 +21,20 @@ namespace Ingresar
         public IngresarUsuario()
         {
             InitializeComponent();
-            ObtenerCategoria();
+            obtenerTipo();
 
         }
 
 
-        int idCategoria;
 
 
-        private void ObtenerCategoria()
+        private void obtenerTipo()
         {
             try
             {
-                DominioCategoria categoria = new DominioCategoria();
+                DominioUsuario usuario = new DominioUsuario();
 
-                comboBox1.DataSource = categoria.ObtenerCategoria();
+                comboBox1.DataSource = usuario.tipoUsuario();
 
             }
             catch (MySqlException ex)
@@ -48,41 +47,6 @@ namespace Ingresar
 
         public int xClick = 0, yClick = 0;
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (txtTitulo.Text == "Titulo")
-            {
-                txtTitulo.Text = "";
-                txtTitulo.ForeColor = Color.LightGray;
-            }
-        }
-
-        private void txtTitulo_Leave(object sender, EventArgs e)
-        {
-            if (txtTitulo.Text == "")
-            {
-                txtTitulo.Text = "Titulo";
-                txtTitulo.ForeColor = Color.White;
-            }
-        }
-
-        private void txtContenido_Enter(object sender, EventArgs e)
-        {
-            if (txtContenido.Text == "Contenido")
-            {
-                txtContenido.Text = "";
-                txtContenido.ForeColor = Color.LightGray;
-            }
-        }
-
-        private void txtContenido_Leave(object sender, EventArgs e)
-        {
-            if (txtContenido.Text == "")
-            {
-                txtContenido.Text = "Contenido";
-                txtContenido.ForeColor = Color.White;
-            }
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -100,11 +64,11 @@ namespace Ingresar
         {
             try
             {
-                DominioPost post = new DominioPost();
-                post.InsertarPost(txtTitulo.Text, txtContenido.Text, idCategoria);
-                MessageBox.Show("Registro insertado");
+                DominioUsuario usuario = new DominioUsuario();
 
+                usuario.crearUsuario(txtNombre.Text, txtCorreo.Text, txtUsuario.Text, txtContraseña.Text, idTipo);
 
+                MessageBox.Show("USUARIO REGISTRADO");
             }
             catch (MySqlException ex)
             {
@@ -113,9 +77,11 @@ namespace Ingresar
             }
         }
 
+        int idTipo;
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idCategoria = comboBox1.SelectedIndex+1;
+            idTipo = comboBox1.SelectedIndex+1;
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

@@ -85,13 +85,13 @@ namespace Clases
 
         }
 
-        public void Insertar(string titulo, string contenido, int categoria)
+        public void Insertar(string titulo, string contenido, int categoria, string idUsuario)
         {
             try
             {
                 using (cn = new Conexion().IniciarConexion())
                 {
-                    MySqlCommand comando = new MySqlCommand($"INSERT INTO post (idPost,titulo,contenido,idCategoria,idEstado)  VALUES(null,'{titulo}' , '{contenido}', {categoria}, 1)", cn);
+                    MySqlCommand comando = new MySqlCommand($"INSERT INTO post (idPost,titulo,contenido,idCategoria,idEstado, idUsuario)  VALUES(null,'{titulo}' , '{contenido}', {categoria}, 1, {idUsuario})", cn);
                     comando.ExecuteNonQuery();
                 }
 
@@ -205,7 +205,7 @@ namespace Clases
             {
                 using (cn = new Conexion().IniciarConexion())
                 {
-                    string query = "SELECT P.idPost, P.titulo, P.fechaDePublicacion, P.contenido, C.nombre as 'Categoria', E.nombre as 'Estado' FROM  post P INNER JOIN categoria C on P.idCategoria=C.idCategoria inner join estado E on P.idEstado = E.idEstado";
+                    string query = "SELECT P.idPost, P.titulo, P.fechaDePublicacion, P.contenido, C.nombre as 'Categoria', E.nombre as 'Estado', U.nombre as 'creador' FROM  post P INNER JOIN categoria C on P.idCategoria=C.idCategoria inner join estado E on P.idEstado = E.idEstado inner join Usuario U on P.idUsuario = U.idUsuario";
 
                     MySqlCommand comando = new MySqlCommand(query, cn);
 

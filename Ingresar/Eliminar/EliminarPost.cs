@@ -119,11 +119,15 @@ namespace Ingresar
                 DominioPost post = new DominioPost();
                 String[] datos = post.BuscarPost(txtId.Text);
 
-                txtId.Text = datos[0];
+
+                if (datos[0] != null) { 
+
+                    txtId.Text = datos[0];
                 txtTitulo.Text = datos[1];
                 txtHora.Text = datos[2];
                 txtContenido.Text = datos[3];
                 ObtenerCategoria(datos[4]);
+            }
             }
             catch (MySqlException ex)
             {

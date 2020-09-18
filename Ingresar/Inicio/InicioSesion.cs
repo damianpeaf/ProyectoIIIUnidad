@@ -53,19 +53,15 @@ namespace InicioSesion
 
                 if (datosUsuario != null)
                 {
-                    if (datosUsuario[3] == "1" || datosUsuario[3] == "2" || datosUsuario[3] == "3" || datosUsuario[3] == "4")
+                    if (datosUsuario[3] == "1" || datosUsuario[3] == "2" || datosUsuario[3] == "3" || datosUsuario[3] == "4" || datosUsuario[3] == "5")
                     {
+                        MessageBox.Show("Bienvenido " + datosUsuario[1]);
+
                         Ingresar.Inicio.Menu frm = new Ingresar.Inicio.Menu();
                         this.Hide();
                         frm.Show();
                         //sincronizar
-                    }
-                    else if (datosUsuario[3] == "5")
-                    {
-                        MessageBox.Show("Bienvenido " + datosUsuario[1]);
-                        Ingresar.Inicio.App frm = new Ingresar.Inicio.App();
-                        this.Hide();
-                        frm.Show();
+
                     }
                     else
                     {

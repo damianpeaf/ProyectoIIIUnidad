@@ -73,8 +73,10 @@ namespace Ingresar
         {
             try
             {
+
+                String idUsuario = Comun.info_usuario.idUsuario;
                 DominioEvento post = new DominioEvento();
-                post.InsertarEvento(txtInicio.Text, txtFinal.Text, txtTitulo.Text, txtDescripcion.Text, idCategoria);
+                post.InsertarEvento(txtInicio.Text, txtFinal.Text, txtTitulo.Text, txtDescripcion.Text, idCategoria, idUsuario);
                 MessageBox.Show("Registro insertado");
 
             }
@@ -146,6 +148,11 @@ namespace Ingresar
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             idCategoria = comboBox1.SelectedIndex + 1;
+
+        }
+
+        private void IngresarEvento_Load(object sender, EventArgs e)
+        {
 
         }
 

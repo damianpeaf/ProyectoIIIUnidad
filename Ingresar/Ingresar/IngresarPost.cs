@@ -100,8 +100,9 @@ namespace Ingresar
         {
             try
             {
+                String idUsuario = Comun.info_usuario.idUsuario;
                 DominioPost post = new DominioPost();
-                post.InsertarPost(txtTitulo.Text, txtContenido.Text, idCategoria);
+                post.InsertarPost(txtTitulo.Text, txtContenido.Text, idCategoria, idUsuario);
                 MessageBox.Show("Registro insertado");
 
 

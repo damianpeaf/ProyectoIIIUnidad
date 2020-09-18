@@ -21,9 +21,9 @@ namespace Dominio
             return Datos;
         }
 
-        public void InsertarPost(string titulo, string contenido, int categoria)
+        public void InsertarPost(string titulo, string contenido, int categoria, string idUsuario)
         {
-            post.Insertar(titulo, contenido, categoria);
+            post.Insertar(titulo, contenido, categoria, idUsuario);
         }
 
         public void ActualizarPost(string id, string titulo, string contenido, int idCategoria)

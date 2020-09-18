@@ -20,17 +20,17 @@ namespace Ingresar.Reporte.Informes {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DatosPost")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatosEvento")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DatosPost : global::System.Data.DataSet {
+    public partial class DatosEvento : global::System.Data.DataSet {
         
-        private PostDataTable tablePost;
+        private EventoDataTable tableEvento;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DatosPost() {
+        public DatosEvento() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Ingresar.Reporte.Informes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DatosPost(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatosEvento(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Ingresar.Reporte.Informes {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Post"] != null)) {
-                    base.Tables.Add(new PostDataTable(ds.Tables["Post"]));
+                if ((ds.Tables["Evento"] != null)) {
+                    base.Tables.Add(new EventoDataTable(ds.Tables["Evento"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Ingresar.Reporte.Informes {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PostDataTable Post {
+        public EventoDataTable Evento {
             get {
-                return this.tablePost;
+                return this.tableEvento;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Ingresar.Reporte.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DatosPost cln = ((DatosPost)(base.Clone()));
+            DatosEvento cln = ((DatosEvento)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Ingresar.Reporte.Informes {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Post"] != null)) {
-                    base.Tables.Add(new PostDataTable(ds.Tables["Post"]));
+                if ((ds.Tables["Evento"] != null)) {
+                    base.Tables.Add(new EventoDataTable(ds.Tables["Evento"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Ingresar.Reporte.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePost = ((PostDataTable)(base.Tables["Post"]));
+            this.tableEvento = ((EventoDataTable)(base.Tables["Evento"]));
             if ((initTable == true)) {
-                if ((this.tablePost != null)) {
-                    this.tablePost.InitVars();
+                if ((this.tableEvento != null)) {
+                    this.tableEvento.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Ingresar.Reporte.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DatosPost";
+            this.DataSetName = "DatosEvento";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DatosPost.xsd";
+            this.Namespace = "http://tempuri.org/DatosEvento.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePost = new PostDataTable();
-            base.Tables.Add(this.tablePost);
+            this.tableEvento = new EventoDataTable();
+            base.Tables.Add(this.tableEvento);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePost() {
+        private bool ShouldSerializeEvento() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Ingresar.Reporte.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DatosPost ds = new DatosPost();
+            DatosEvento ds = new DatosEvento();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,37 @@ namespace Ingresar.Reporte.Informes {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void PostRowChangeEventHandler(object sender, PostRowChangeEvent e);
+        public delegate void EventoRowChangeEventHandler(object sender, EventoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PostDataTable : global::System.Data.TypedTableBase<PostRow> {
+        public partial class EventoDataTable : global::System.Data.TypedTableBase<EventoRow> {
             
-            private global::System.Data.DataColumn columnidPost;
+            private global::System.Data.DataColumn columnidEvento;
             
-            private global::System.Data.DataColumn columntitulo;
+            private global::System.Data.DataColumn columninicia;
+            
+            private global::System.Data.DataColumn columntermina;
             
             private global::System.Data.DataColumn columnfechaDePublicacion;
             
-            private global::System.Data.DataColumn columncontenido;
+            private global::System.Data.DataColumn columntitulo;
             
-            private global::System.Data.DataColumn columncategoria;
+            private global::System.Data.DataColumn columndescripcion;
             
-            private global::System.Data.DataColumn columnestado;
+            private global::System.Data.DataColumn columnCategoria;
+            
+            private global::System.Data.DataColumn columnEstado;
             
             private global::System.Data.DataColumn columnCreador;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostDataTable() {
-                this.TableName = "Post";
+            public EventoDataTable() {
+                this.TableName = "Evento";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +308,7 @@ namespace Ingresar.Reporte.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PostDataTable(global::System.Data.DataTable table) {
+            internal EventoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,24 +325,32 @@ namespace Ingresar.Reporte.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected PostDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EventoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idPostColumn {
+            public global::System.Data.DataColumn idEventoColumn {
                 get {
-                    return this.columnidPost;
+                    return this.columnidEvento;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn tituloColumn {
+            public global::System.Data.DataColumn iniciaColumn {
                 get {
-                    return this.columntitulo;
+                    return this.columninicia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn terminaColumn {
+                get {
+                    return this.columntermina;
                 }
             }
             
@@ -352,25 +364,33 @@ namespace Ingresar.Reporte.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn contenidoColumn {
+            public global::System.Data.DataColumn tituloColumn {
                 get {
-                    return this.columncontenido;
+                    return this.columntitulo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn categoriaColumn {
+            public global::System.Data.DataColumn descripcionColumn {
                 get {
-                    return this.columncategoria;
+                    return this.columndescripcion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn estadoColumn {
+            public global::System.Data.DataColumn CategoriaColumn {
                 get {
-                    return this.columnestado;
+                    return this.columnCategoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
                 }
             }
             
@@ -393,51 +413,53 @@ namespace Ingresar.Reporte.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostRow this[int index] {
+            public EventoRow this[int index] {
                 get {
-                    return ((PostRow)(this.Rows[index]));
+                    return ((EventoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PostRowChangeEventHandler PostRowChanging;
+            public event EventoRowChangeEventHandler EventoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PostRowChangeEventHandler PostRowChanged;
+            public event EventoRowChangeEventHandler EventoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PostRowChangeEventHandler PostRowDeleting;
+            public event EventoRowChangeEventHandler EventoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PostRowChangeEventHandler PostRowDeleted;
+            public event EventoRowChangeEventHandler EventoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddPostRow(PostRow row) {
+            public void AddEventoRow(EventoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostRow AddPostRow(string idPost, string titulo, string fechaDePublicacion, string contenido, string categoria, string estado, string Creador) {
-                PostRow rowPostRow = ((PostRow)(this.NewRow()));
+            public EventoRow AddEventoRow(string idEvento, string inicia, string termina, string fechaDePublicacion, string titulo, string descripcion, string Categoria, string Estado, string Creador) {
+                EventoRow rowEventoRow = ((EventoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        idPost,
-                        titulo,
+                        idEvento,
+                        inicia,
+                        termina,
                         fechaDePublicacion,
-                        contenido,
-                        categoria,
-                        estado,
+                        titulo,
+                        descripcion,
+                        Categoria,
+                        Estado,
                         Creador};
-                rowPostRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPostRow);
-                return rowPostRow;
+                rowEventoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEventoRow);
+                return rowEventoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PostDataTable cln = ((PostDataTable)(base.Clone()));
+                EventoDataTable cln = ((EventoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,64 +467,70 @@ namespace Ingresar.Reporte.Informes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PostDataTable();
+                return new EventoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnidPost = base.Columns["idPost"];
-                this.columntitulo = base.Columns["titulo"];
+                this.columnidEvento = base.Columns["idEvento"];
+                this.columninicia = base.Columns["inicia"];
+                this.columntermina = base.Columns["termina"];
                 this.columnfechaDePublicacion = base.Columns["fechaDePublicacion"];
-                this.columncontenido = base.Columns["contenido"];
-                this.columncategoria = base.Columns["categoria"];
-                this.columnestado = base.Columns["estado"];
+                this.columntitulo = base.Columns["titulo"];
+                this.columndescripcion = base.Columns["descripcion"];
+                this.columnCategoria = base.Columns["Categoria"];
+                this.columnEstado = base.Columns["Estado"];
                 this.columnCreador = base.Columns["Creador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnidPost = new global::System.Data.DataColumn("idPost", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidPost);
-                this.columntitulo = new global::System.Data.DataColumn("titulo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntitulo);
+                this.columnidEvento = new global::System.Data.DataColumn("idEvento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidEvento);
+                this.columninicia = new global::System.Data.DataColumn("inicia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninicia);
+                this.columntermina = new global::System.Data.DataColumn("termina", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntermina);
                 this.columnfechaDePublicacion = new global::System.Data.DataColumn("fechaDePublicacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaDePublicacion);
-                this.columncontenido = new global::System.Data.DataColumn("contenido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncontenido);
-                this.columncategoria = new global::System.Data.DataColumn("categoria", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncategoria);
-                this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestado);
+                this.columntitulo = new global::System.Data.DataColumn("titulo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitulo);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
+                this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoria);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
                 this.columnCreador = new global::System.Data.DataColumn("Creador", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreador);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostRow NewPostRow() {
-                return ((PostRow)(this.NewRow()));
+            public EventoRow NewEventoRow() {
+                return ((EventoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PostRow(builder);
+                return new EventoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PostRow);
+                return typeof(EventoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PostRowChanged != null)) {
-                    this.PostRowChanged(this, new PostRowChangeEvent(((PostRow)(e.Row)), e.Action));
+                if ((this.EventoRowChanged != null)) {
+                    this.EventoRowChanged(this, new EventoRowChangeEvent(((EventoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -510,8 +538,8 @@ namespace Ingresar.Reporte.Informes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PostRowChanging != null)) {
-                    this.PostRowChanging(this, new PostRowChangeEvent(((PostRow)(e.Row)), e.Action));
+                if ((this.EventoRowChanging != null)) {
+                    this.EventoRowChanging(this, new EventoRowChangeEvent(((EventoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -519,8 +547,8 @@ namespace Ingresar.Reporte.Informes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PostRowDeleted != null)) {
-                    this.PostRowDeleted(this, new PostRowChangeEvent(((PostRow)(e.Row)), e.Action));
+                if ((this.EventoRowDeleted != null)) {
+                    this.EventoRowDeleted(this, new EventoRowChangeEvent(((EventoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -528,14 +556,14 @@ namespace Ingresar.Reporte.Informes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PostRowDeleting != null)) {
-                    this.PostRowDeleting(this, new PostRowChangeEvent(((PostRow)(e.Row)), e.Action));
+                if ((this.EventoRowDeleting != null)) {
+                    this.EventoRowDeleting(this, new EventoRowChangeEvent(((EventoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovePostRow(PostRow row) {
+            public void RemoveEventoRow(EventoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -544,7 +572,7 @@ namespace Ingresar.Reporte.Informes {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatosPost ds = new DatosPost();
+                DatosEvento ds = new DatosEvento();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -562,7 +590,7 @@ namespace Ingresar.Reporte.Informes {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PostDataTable";
+                attribute2.FixedValue = "EventoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -606,46 +634,62 @@ namespace Ingresar.Reporte.Informes {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PostRow : global::System.Data.DataRow {
+        public partial class EventoRow : global::System.Data.DataRow {
             
-            private PostDataTable tablePost;
+            private EventoDataTable tableEvento;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PostRow(global::System.Data.DataRowBuilder rb) : 
+            internal EventoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePost = ((PostDataTable)(this.Table));
+                this.tableEvento = ((EventoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string idPost {
+            public string idEvento {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.idPostColumn]));
+                        return ((string)(this[this.tableEvento.idEventoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idPost\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idEvento\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.idPostColumn] = value;
+                    this[this.tableEvento.idEventoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string titulo {
+            public string inicia {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.tituloColumn]));
+                        return ((string)(this[this.tableEvento.iniciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'titulo\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'inicia\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.tituloColumn] = value;
+                    this[this.tableEvento.iniciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string termina {
+                get {
+                    try {
+                        return ((string)(this[this.tableEvento.terminaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'termina\' de la tabla \'Evento\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEvento.terminaColumn] = value;
                 }
             }
             
@@ -654,62 +698,78 @@ namespace Ingresar.Reporte.Informes {
             public string fechaDePublicacion {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.fechaDePublicacionColumn]));
+                        return ((string)(this[this.tableEvento.fechaDePublicacionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechaDePublicacion\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechaDePublicacion\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.fechaDePublicacionColumn] = value;
+                    this[this.tableEvento.fechaDePublicacionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string contenido {
+            public string titulo {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.contenidoColumn]));
+                        return ((string)(this[this.tableEvento.tituloColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'contenido\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'titulo\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.contenidoColumn] = value;
+                    this[this.tableEvento.tituloColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string categoria {
+            public string descripcion {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.categoriaColumn]));
+                        return ((string)(this[this.tableEvento.descripcionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'categoria\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.categoriaColumn] = value;
+                    this[this.tableEvento.descripcionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string estado {
+            public string Categoria {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.estadoColumn]));
+                        return ((string)(this[this.tableEvento.CategoriaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estado\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Categoria\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.estadoColumn] = value;
+                    this[this.tableEvento.CategoriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Estado {
+                get {
+                    try {
+                        return ((string)(this[this.tableEvento.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estado\' de la tabla \'Evento\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEvento.EstadoColumn] = value;
                 }
             }
             
@@ -718,99 +778,123 @@ namespace Ingresar.Reporte.Informes {
             public string Creador {
                 get {
                     try {
-                        return ((string)(this[this.tablePost.CreadorColumn]));
+                        return ((string)(this[this.tableEvento.CreadorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Creador\' de la tabla \'Post\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Creador\' de la tabla \'Evento\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePost.CreadorColumn] = value;
+                    this[this.tableEvento.CreadorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidPostNull() {
-                return this.IsNull(this.tablePost.idPostColumn);
+            public bool IsidEventoNull() {
+                return this.IsNull(this.tableEvento.idEventoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidPostNull() {
-                this[this.tablePost.idPostColumn] = global::System.Convert.DBNull;
+            public void SetidEventoNull() {
+                this[this.tableEvento.idEventoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IstituloNull() {
-                return this.IsNull(this.tablePost.tituloColumn);
+            public bool IsiniciaNull() {
+                return this.IsNull(this.tableEvento.iniciaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SettituloNull() {
-                this[this.tablePost.tituloColumn] = global::System.Convert.DBNull;
+            public void SetiniciaNull() {
+                this[this.tableEvento.iniciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsterminaNull() {
+                return this.IsNull(this.tableEvento.terminaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetterminaNull() {
+                this[this.tableEvento.terminaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsfechaDePublicacionNull() {
-                return this.IsNull(this.tablePost.fechaDePublicacionColumn);
+                return this.IsNull(this.tableEvento.fechaDePublicacionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfechaDePublicacionNull() {
-                this[this.tablePost.fechaDePublicacionColumn] = global::System.Convert.DBNull;
+                this[this.tableEvento.fechaDePublicacionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscontenidoNull() {
-                return this.IsNull(this.tablePost.contenidoColumn);
+            public bool IstituloNull() {
+                return this.IsNull(this.tableEvento.tituloColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcontenidoNull() {
-                this[this.tablePost.contenidoColumn] = global::System.Convert.DBNull;
+            public void SettituloNull() {
+                this[this.tableEvento.tituloColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscategoriaNull() {
-                return this.IsNull(this.tablePost.categoriaColumn);
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tableEvento.descripcionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcategoriaNull() {
-                this[this.tablePost.categoriaColumn] = global::System.Convert.DBNull;
+            public void SetdescripcionNull() {
+                this[this.tableEvento.descripcionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsestadoNull() {
-                return this.IsNull(this.tablePost.estadoColumn);
+            public bool IsCategoriaNull() {
+                return this.IsNull(this.tableEvento.CategoriaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetestadoNull() {
-                this[this.tablePost.estadoColumn] = global::System.Convert.DBNull;
+            public void SetCategoriaNull() {
+                this[this.tableEvento.CategoriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableEvento.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableEvento.EstadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCreadorNull() {
-                return this.IsNull(this.tablePost.CreadorColumn);
+                return this.IsNull(this.tableEvento.CreadorColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCreadorNull() {
-                this[this.tablePost.CreadorColumn] = global::System.Convert.DBNull;
+                this[this.tableEvento.CreadorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -818,22 +902,22 @@ namespace Ingresar.Reporte.Informes {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class PostRowChangeEvent : global::System.EventArgs {
+        public class EventoRowChangeEvent : global::System.EventArgs {
             
-            private PostRow eventRow;
+            private EventoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostRowChangeEvent(PostRow row, global::System.Data.DataRowAction action) {
+            public EventoRowChangeEvent(EventoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostRow Row {
+            public EventoRow Row {
                 get {
                     return this.eventRow;
                 }

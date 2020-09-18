@@ -42,10 +42,54 @@ namespace Reporte
             DataTable ds = post.ReportePost();
 
             reportViewer2.LocalReport.DataSources.Clear();
+
+            reportViewer2.LocalReport.ReportPath = @"..\..\..\Reporte\InformePost.rdlc";
             ReportDataSource rp = new ReportDataSource("Post", ds);
             reportViewer2.LocalReport.DataSources.Add(rp);
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Ingresar.Inicio.Menu frm = new Ingresar.Inicio.Menu();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Ingresar.Inicio.Menu frm = new Ingresar.Inicio.Menu();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DominioPost post = new DominioPost();
+            DataTable ds = post.ReportePost();
+
+            reportViewer2.LocalReport.DataSources.Clear();
+
+            reportViewer2.LocalReport.ReportPath = @"..\..\..\Reporte\InformePost.rdlc";
+            ReportDataSource rp = new ReportDataSource("Post", ds);
+            reportViewer2.LocalReport.DataSources.Add(rp);
+
             reportViewer2.RefreshReport();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            DominioEvento evento = new DominioEvento();
+            DataTable ds2 = evento.RerpoteEvento();
+
+            reportViewer2.LocalReport.ReportPath = @"..\..\..\Reporte\InformeEvento.rdlc";
+
+            ReportDataSource rp2 = new ReportDataSource("DataSet1", ds2);
+            reportViewer2.LocalReport.DataSources.Add(rp2);
+
+            reportViewer2.RefreshReport();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
